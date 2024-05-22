@@ -18,7 +18,8 @@ def extract_frames(video_path, output_folder):
 
         # 如果读取成功，则保存该帧为图片
         if success:
-            cv2.imwrite(os.path.join(output_folder, f"frame{count}.jpg"), image)
+            if count > 30 and count <50:
+                cv2.imwrite(os.path.join(output_folder, f"frame{count}.jpg"), image)
             count += 1
         else:
             break
